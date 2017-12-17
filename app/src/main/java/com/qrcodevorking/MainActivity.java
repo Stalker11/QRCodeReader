@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
   private TextView mSearchInfo;
   private Preview mPreview;
   private Button mGenerator;
+  private Button mStarter;
   private static final String TAG = MainActivity.class.getSimpleName();
 
   @Override
@@ -32,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     mGenerator = (Button)findViewById(R.id.generate_qr);
+    mStarter = (Button)findViewById(R.id.start_new_reader);
+    mStarter.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this,ReadQR.class));
+      }
+    });
     mGenerator.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -47,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
       }
       if (ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, 1000);
+      } else {
+        createPreviw();
       }
 
     }

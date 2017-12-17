@@ -55,4 +55,12 @@
       android:layout_alignStart="@+id/btn_scan"
       android:layout_below="@+id/btn_scan"
       android:text="GenerateQR"/>
+
+  <Button
+      android:id="@+id/start_new_reader"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/generate_qr"
+      android:layout_centerHorizontal="true"
+      android:text="Start reader"/>
 </RelativeLayout>

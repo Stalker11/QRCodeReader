@@ -29,6 +29,7 @@
         android:value="barcode" />
     <activity android:name=".ShowResult"/>
     <activity android:name=".GenerateQRActivity"/>
+    <activity android:name=".ReadQR"/>
   </application>
 
 </manifest>

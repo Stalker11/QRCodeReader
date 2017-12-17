@@ -26,6 +26,8 @@ class GenerateQRActivity : AppCompatActivity() {
                 code_picture.setImageBitmap(bitmap)
             } catch (e: WriterException) {
 
+            } catch (e: IllegalArgumentException){
+
             }
         }
     }
